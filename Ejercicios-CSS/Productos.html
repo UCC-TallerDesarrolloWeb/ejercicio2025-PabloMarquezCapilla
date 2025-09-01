@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo de Productos</title>
+  <style>
+    :root{
+      --rojo: #b71c1c;
+      --azul: #1a237e;
+      --blanco: #fff;
+    }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color:#f3f5f7;
+    }
+
+    .grid-container{
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      grid-template-areas:
+        "header header header header"
+        "links  links  links  links"
+        "aside  main   main   main"
+        "footer footer footer footer";
+      column-gap: 12px;
+      row-gap: 12px;
+      padding: 12px;
+    }
+
+    .item1{ grid-area: header; }
+    .item2{ grid-area: links; }
+    .item3{ grid-area: aside; }
+    .item4{ grid-area: main; }
+    .item5{ grid-area: footer; }
+
+    header, nav, aside, footer{
+      padding:12px 16px;
+      background:#fff;
+      border: 1px solid rgba(0,0,0,.15);
+    }
+    header{
+      background:#2196F3;
+      color:white;
+      text-align:center;
+      font-size:22px;
+      border-color: transparent;
+    }
+    nav{
+      background: rgba(33,150,243,.08);
+      text-align:center;
+    }
+    aside{
+      background: rgba(0,0,0,.03);
+    }
+
+    nav button{
+      background: var(--rojo);
+      color: var(--blanco);
+      border:none;
+      margin: 8px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor:pointer;
+      font-size: 15px;
+      transition: background-color 0.3s, padding 0.3s;
+    }
+    nav button.catalogo{ background: var(--rojo); }
+    nav button.carrito{ background: var(--azul); }
+
+    nav button:hover{
+      background-color: #444; 
+      padding: 10px 20px;     
+    }
+
+
+    main{
+      display:grid;
+      grid-template-columns: auto auto auto; 
+      column-gap: 20px;  
+      row-gap: 20px;     
+      padding: 12px;
+      background-color:#fff;
+    }
+    .card{
+      border:1px solid rgba(0,0,0,.8);
+      background-color: rgba(255,255,255,.9);
+      padding:15px;
+      text-align:center;
+      border-radius:12px;
+    }
+    .card img{
+      width:100%;
+      height:auto;
+    }
+    .card h3{
+      margin:10px 0 0;
+      font-size:18px;
+    }
+
+    fieldset{ margin-bottom:12px; }
+  </style>
+</head>
+<body class="grid-container">
+  <header class="item1">Catálogo de Productos</header>
+
+
+  <nav class="item2">
+    <button class="catalogo">Catálogo</button>
+    <button class="carrito">Carrito de Compras</button>
+  </nav>
+
+  <aside class="item3">
+    <form>
+      <fieldset>
+        <legend>BUSQUEDA</legend>
+        <label for="search">Buscar:</label>
+        <input type="text" id="search" name="search" placeholder="Palabra..." />
+      </fieldset>
+
+      <fieldset>
+        <legend>PRECIOS</legend>
+        <p>
+          <label for="precio-min">Mínimo</label>
+          <input type="number" id="precio-min" name="precio-min" value="0" min="0" />
+        </p>
+        <p>
+          <label for="precio-max">Máximo</label>
+          <input type="number" id="precio-max" name="precio-max" value="100" max="999999" />
+        </p>
+      </fieldset>
+    </form>
+  </aside>
+
+  <main class="item4">
+    <div class="card">
+      <img src="../Ejercicios-JavaScript/images/cabezal-cerrado.webp" alt="Cabezal Cerrado">
+      <h3>Cabezal Cerrado</h3>
+    </div>
+    <div class="card">
+      <img src="../Ejercicios-JavaScript/images/foco-con-dedos.webp" alt="Foco con dedos">
+      <h3>Foco con dedos</h3>
+    </div>
+    <div class="card">
+      <img src="../Ejercicios-JavaScript/images/protectores-manos.webp" alt="Protectores de manos">
+      <h3>Protectores de manos</h3>
+    </div>
+    <div class="card">
+      <img src="../Ejercicios-JavaScript/images/escudo-potencia.webp" alt="Escudo potencia">
+      <h3>Escudo potencia</h3>
+    </div>
+    <div class="card">
+      <img src="../Ejercicios-JavaScript/images/protectores-pie.webp" alt="Protectores de pie">
+      <h3>Protectores de pie</h3>
+    </div>
+    <div class="card">
+      <img src="../Ejercicios-JavaScript/images/dobok.webp" alt="Dobok">
+      <h3>Dobok</h3>
+    </div>
+  </main>
+</body>
+</html>
