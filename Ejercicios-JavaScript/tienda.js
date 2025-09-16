@@ -61,3 +61,11 @@ const productos = [
     imagen: "protectores-manos.webp",
   },
 ];
+
+let mostrarDetalle = () => {
+  document.getElementById("detalle").showModal(); 
+}
+
+let cerrarModal = () => {
+  document.getElementById("detalle").close(); 
+}

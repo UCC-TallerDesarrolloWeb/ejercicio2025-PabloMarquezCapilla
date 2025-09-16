@@ -1,12 +1,12 @@
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
+ * Convierte las unidades ingresadas por el usuario
+ * @method convertirunidades de la función
+ * @param {string} unidad - unidad ingresada: metro, pie, pulgada, yarda
+ * @param {Number} valor - valor numerico ingresado por el usuario 
  * @return Valor que retorna
  */
 
-function convertirunidades(unidad,valor){
+let convertirunidades = (unidad,valor) =>{
     let metro,pie,pulgada,yarda;
 
     if(isNaN(valor)){
@@ -55,3 +55,44 @@ function convertirunidades(unidad,valor){
     document.getElementById ("pulgada").value = pulgada;
     document.getElementById ("yarda").value = yarda;
 }
+
+
+/**
+ * Convierte las unidades ingresadas por el usuario
+ * @method convertirGR de la función
+ * @param {string} id - GRADOS O RADIANES
+ * @param {Number} valor - valor numerico ingresado por el usuario 
+ * @return Valor que retorna
+ */
+
+
+
+let convertirGR = (id,valor) => {
+    
+    let cantGrados, cantRadianes; 
+    
+    if (id =="grados"){
+        cantGrados = valor; 
+        cantRadianes = cantGrados * Math.PI/180;
+        document.getElementById("radianes").value = cantRadianes;
+    }else {
+        cantRadianes = valor; 
+        cantGrados = cantRadianes * 180/Math.PI;
+        document.getElementById("grados").value = cantGrados;
+
+    }
+};
+
+let mostrarOcultarDiv = (id) => {
+    //////
+   //// if (id == "mostrarDiv"){
+   ////     document.getElementsByName("unDiv")[0].style.display = "block"; 
+  ////  }
+  ////  else {
+   ////     document.getElementsByName("unDiv")[0].style.display = "none"; 
+    //// }
+    /////
+const mostrar = id == "mostrarDiv" ? "block" : "none"; 
+document.getElementsByName("unDiv")[0].style.display = mostrar; 
+
+};
