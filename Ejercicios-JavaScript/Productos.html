@@ -1,94 +1,95 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo de Productos</title>
-    <link rel="stylesheet" href="catalogo.css" type="text/css">
-     <script type="text/javascript" src="tienda.js"></script>
-    
-</head>
-<body class="grid-container">
-    <header class="item1">
-        Catalogo de Productos
-    </header>
+<html lang="en">
+  <head>
+    <title>Catalogo de productos</title>
+    <link rel="stylesheet" href="store.css" />
+    <script type="text/javascript" src="tienda.js"></script>
+  </head>
+  <body class="grid-container" onload="mostrarCatalogo()">
+    <header class="item1">Catalogo de productos</header>
     <nav class="item2">
-        <a href="productos.html">Catalogo de Productos</a>
-        <a href="">Carrito de Compras</a>
+      <a href="productos.html">Catalogo de productos</a>
+      <a href="carrito.html">Carrito de compras</a>
     </nav>
     <aside class="item3">
-        <form name="filter">
-            <fieldset>
-                <legend>Busqueda</legend>
-                <label for="search">Buscar:</label>
-                <input type="text" id="search" name="search">
-            </fieldset>
-            <fieldset>
-                <p>
-                <legend>Precios</legend>
-                <label for="minimo">Minimo:</label>
-                <input type="number" id="minimo" name="precio-min" min="0">
-                </p>
-                <p>
-                 <label for="maximo">Maximo:</label>
-                 <input type="number" id="maximo" name="precio-max">   
-                </p>
-            </fieldset>
-            <fieldset>
-                <legend>Tipo de Producto</legend>
-                <p>
-                <label for="protectores">Protectores</label>
-                <input type="checkbox" name="tipo" id="protectores" value="protectores">
-                </p>
-                <p>
-                <label for="entrenamiento">Entrenamiento</label>
-                <input type="checkbox" id="entrenamiento" name="tipo" value="entrenamiento">
-                </p>
-                <p>
-                <label for="dobok">Dobok</label>
-                <input type="checkbox" id="dobok" name="tipo" value="dobok">
-                </p>
-            </fieldset>
-        </form>
+      <fieldset>
+        <legend>Busquedas</legend>
+        <label for="search">Buscar:</label>
+        <input type="text" id="search" name="search" placeholder="Palabra.." />
+      </fieldset>
+      <fieldset>
+        <legend>Precios</legend>
+        <p>
+          <label for="price-min">Minimo:</label>
+          <input
+            type="number"
+            id="price-min"
+            name="price-min"
+            value="0"
+            min="0"
+          />
+        </p>
+        <p>
+          <label for="price-max">Maximo:</label>
+          <input
+            type="number"
+            id="price-max"
+            name="price-max"
+            value="0"
+            min="0"
+          />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Tipos de productos</legend>
+        <p>
+          <input type="checkbox" id="protectores" name="protectores" />
+          <label for="protectores">Protectores</label>
+        </p>
+        <p>
+          <input type="checkbox" id="entrenamiento" name="entrenamiento" />
+          <label for="entrenamiento">Entrenamiento</label>
+        </p>
+        <p>
+          <input type="checkbox" id="dobok" name="dobok" />
+          <label for="dobok">Dobok</label>
+        </p>
+      </fieldset>
     </aside>
-    <main class="item4">
-        <div>
-         <dialog id="detalle">
-  <h2>Detalle del Producto</h2>
-  <h3>Cabezal Cerrado</h3>
-  <p>Este producto viene del talle 1 al 3</p>
-  <button type="button" onclick="cerrarModal()">Cerrar</button>
-</dialog>
-
-<img src="../Ejercicios-JavaScript/images/cabezal-cerrado.webp" alt="cabezal-cerrado"/>
-<h3>Cabezal</h3>
-<button type="button" onclick="mostrarDetalle()">Ver Detalles</button>
-
-
-        </div>
-        <div>
-            <img src="../Ejercicios-JavaScript/images/dobok.webp" alt="Dobok"/>
-            <h3>Dobok</h3>
-        </div>
-            <div>
-            <img src="../Ejercicios-JavaScript/images/foco-con-dedos.webp" alt="foco-con-dedos"/>
-            <h3>Foco con Dedo</h3>
-        </div>
-            <div>
-            <img src="../Ejercicios-JavaScript/images/protectores-manos.webp" alt="protectores-manos"/>
-            <h3>Protector de Manos</h3>
-        </div>
-        <div>
-            <img src="../Ejercicios-JavaScript/images/protectores-pie.webp" alt="protectores-pie"/>
-            <h3>Protectores de Pie<h3>
-        </div>
-        <div>
-            <img src="../Ejercicios-JavaScript/images/escudo-potencia.webp" alt="escudo-potencia"/>
-            <h3>Escudo de Potencia</h3>
-        </div>
+    <dialog id="detalle">
+      <h2>Detalle del Producto</h2>
+      <h3 id="titulo-prod">Cabezal cerrado</h3>
+      <p id="descr-prod">Este producto viene del talle 1 al 3.</p>
+      <p id="precio-prod"></p>
+      <button type="button" onclick="cerrarModal()">Cerrar</button>
+    </dialog>
+    <main class="item4" id="catalogo">
+      <div>
+        <img src="images/cabezal-cerrado.webp" alt="Cabezal cerrado" />
+        <h3>Cabezal cerrado</h3>
+        <button type="button" onclick="mostrarDetalle()">Ver Detalle</button>
+      </div>
+      <div>
+        <img src="images/escudo-potencia.webp" alt="Escudo de potencia" />
+        <h3>Escudo de potencia</h3>
+      </div>
+      <div>
+        <img src="images/foco-con-dedos.webp" alt="foco con dedos" />
+        <h3>Foco con dedos</h3>
+      </div>
+      <div>
+        <img src="images/protectores-manos.webp" alt="protectores de manos" />
+        <h3>Protectores de manos</h3>
+      </div>
+      <div>
+        <img src="images/protectores-pie.webp" alt="protectores de pie" />
+        <h3>Protectores de pie</h3>
+      </div>
+      <div>
+        <img src="images/dobok.webp" alt="dobok" />
+        <h3>Dobok</h3>
+      </div>
     </main>
-    <footer class="item5">
-        contacto
-    </footer>
-</body>
+    <footer class="item5">Info de contacto</footer>
+  </body>
 </html>

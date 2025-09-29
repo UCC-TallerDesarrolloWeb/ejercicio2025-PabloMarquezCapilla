@@ -69,3 +69,4 @@ let mostrarDetalle = () => {
 let cerrarModal = () => {
   document.getElementById("detalle").close(); 
 }
+
