@@ -1,55 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo de Productos</title>
-    <link rel="stylesheet" href="catalogo.css" type="text/css">
-     <script type="text/javascript" src="tienda.js"></script>
-    
+    <title>Carrito</title>
+    <link rel="stylesheet" href="store.css" type="text/css">
+    <script type="text/javascript" src="tienda.js"></script>
+    <meta charset="UTF-8">
 </head>
-<body class="grid-container">
+<body class="grid-container" onload="mostrarCarrito() ; contarProductos()">
     <header class="item1">
-        Catalogo de Productos
+        Carrito
     </header>
     <nav class="item2">
-        <a href="productos.html">Catalogo de Productos</a>
-        <a href="">Carrito de Compras</a>
+        <a href="Product.html">Catálogo de productos</a>
+        <a href="carrito.html">Carrito de compras</a>
+        <div id="cant-prod"></div>
     </nav>
-
-    <main class="item4">
-        <div>
-
-
-<img src="../Ejercicios-JavaScript/images/cabezal-cerrado.webp" alt="cabezal-cerrado"/>
-<h3>Cabezal</h3>
-<button type="button" onclick="mostrarDetalle()">Ver Detalles</button>
-
-
-        </div>
-        <div>
-            <img src="../Ejercicios-JavaScript/images/dobok.webp" alt="Dobok"/>
-            <h3>Dobok</h3>
-        </div>
-            <div>
-            <img src="../Ejercicios-JavaScript/images/foco-con-dedos.webp" alt="foco-con-dedos"/>
-            <h3>Foco con Dedo</h3>
-        </div>
-            <div>
-            <img src="../Ejercicios-JavaScript/images/protectores-manos.webp" alt="protectores-manos"/>
-            <h3>Protector de Manos</h3>
-        </div>
-        <div>
-            <img src="../Ejercicios-JavaScript/images/protectores-pie.webp" alt="protectores-pie"/>
-            <h3>Protectores de Pie<h3>
-        </div>
-        <div>
-            <img src="../Ejercicios-JavaScript/images/escudo-potencia.webp" alt="escudo-potencia"/>
-            <h3>Escudo de Potencia</h3>
-        </div>
-    </main>
+    <main class="item4" id="mostrar-carrito"></main>
     <footer class="item5">
-        contacto
+        Info de contacto
     </footer>
 </body>
 </html>
